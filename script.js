@@ -74,15 +74,17 @@ srBounce.reveal('.featured-image', { delay: 300 });
 
 /* -- PROJECT BOX -- */
 srBounce.reveal('.project-box', { interval: 200 });/* -- HEADINGS -- */
+srBounce.reveal('.certificate-box', { interval: 200 });
 srBounce.reveal('.top-header', {});
 /* -- ABOUT INFO & CONTACT INFO -- */
 
-srBounce.reveal('.about-info', { delay: 100 });
+srBounce.reveal('.about-info', { interval: 100 });
 srBounce.reveal('.contact-info', { delay: 100 });
 /* -- ABOUT SKILLS & FORM BOX -- */
 
 
-srBounce.reveal('.skills-box', { delay: 100 });
+srBounce.reveal('.skills-header', { interval: 100 });
+srBounce.reveal('.skill-box', { interval: 100 });
 srBounce.reveal('.form-control', { delay: 100 });
 
 /* ----- CHANGE ACTIVE LINK ----- */
