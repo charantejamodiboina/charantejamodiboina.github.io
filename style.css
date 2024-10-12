@@ -11,15 +11,21 @@ body {
 }
 /* Default Dark Mode */
 :root {
-  --body-color: rgb(17, 26, 36);
+  --body-color: rgb(9, 15, 20);
   --color-white: rgb(255, 255, 255);
   --text-color-second: rgb(255, 255, 255);
   --text-color-third: rgb(248, 238, 0);
-  --first-color: rgb(18, 41, 108);
+  --icon-hover:rgb(165, 160, 3);
+  --first-color: #007bff;
   --first-color-hover: rgb(40, 91, 212);
   --second-color: rgb(248, 238, 0);
   --third-color: rgb(248, 238, 0);
   --first-shadow-color: rgba(0, 0, 0, 0.1);
+  --icon_circle: url('clickme_yellow.png');
+  --profile-image:url('charan.png');
+  --profile_circle1: url('circle1.png');
+  --profile_circle2: url('circle2.png');
+  --profile_circle3: url('circle3.png');
 }
 
 /* Apply the dark mode colors to the body */
@@ -84,9 +90,16 @@ body.light-mode {
   --first-color: #007bff;
   --first-color-hover: #0056b3;
   --text-color-third: rgb(239, 183, 1);
+  --icon-hover:#004792;
   --second-color: rgb(239, 183, 1);
-  --third-color: #0056b3;
+  --third-color: #007bff;
   --first-shadow-color: rgba(0, 0, 0, 0.15);
+  --text-shadow: 0 0 70px #e60073;
+  --icon_circle: url('clickme_blue.png');
+  --profile-image:url('charan2.png');
+  --profile_circle1: url('lightcircle1.png');
+  --profile_circle2: url('lightcircle2.png');
+  --profile_circle3: url('lightcircle3.png');
 }
 
 body.light-mode {
@@ -145,7 +158,7 @@ html {
 }
 .btn:hover {
   background: var(--second-color);
-  color: var(--color-white);
+  color: #000000;
 }
 /* ----- GLOBAL ICONS DESIGN ----- */
 i {
@@ -168,10 +181,11 @@ nav {
   height: 90px;
   line-height: 90px;
   background-color: var(--body-color);
-  padding-inline: 9vw;
+  padding-inline: 10vw;
   transition: 0.3s;
   top:0;
   z-index: 100;
+  left:0;
   
 }
 .nav-logo {
@@ -204,8 +218,8 @@ nav {
   color: var(--text-color-second);
   font-weight: 500;
   border-radius: 5px;
-  padding-inline: 15px;
-  margin-inline: 20px;
+  padding-inline: 10px;
+  margin-inline: 12px;
   width:100%;
   text-align: center;
 }
@@ -227,7 +241,11 @@ nav {
   /* border-radius: 15px; */
   padding: 10px, 20px;
 }
-
+.nav-button {
+  position: relative;
+  top:10px;
+  left:0;
+}
 /* .active-link::after {
   content: '';
   position: absolute;
@@ -310,7 +328,7 @@ nav {
   text-align: center;
   line-height: 70px;  /* Vertically align the icon */
   font-size: 32px;  /* Adjust icon size */
-  color: #000000;  /* Icon color */
+  color: var(--text-color-second);  /* Icon color */
   transition: color 0.3s ease;  /* Smooth transition for icon color */
 }
 
@@ -327,7 +345,7 @@ nav {
   left: 35px;
   width: 90%;  /* Circle covers the full container */
   height: 90%;
-  background-image: url('circle.png');
+  background-image: var(--icon_circle);
   background-size: contain;  /* Ensure the circle fits inside the container */
   background-position: center;
   opacity: 0;  /* Start the circle invisible */
@@ -337,7 +355,7 @@ nav {
 }
 
 .icon:hover {
-  color: #f1c40f;  /* Change icon color on hover */
+  color: var(--third-color);  /* Change icon color on hover */
 }
 
 .icon:hover::after {
@@ -366,12 +384,16 @@ nav {
 }
 
 /* Styling for the avatar image */
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%; /* Ensure the image stays circular */
-  z-index: 2; /* Ensure the avatar stays on top of the circle */
+.charan {
+  position: absolute;
+  top: -1px; /* Adjust this to control the distance of the circle from the image */
+  left: -1px;
+  width: 182px; /* Larger than the image to ensure it rotates around it */
+  height: 182px;
+  border-radius: 50%;
+  background-image: var(--profile-image);
+  background-size: cover; /* Ensure the circle background fits inside */
+  background-position: center;
 }
 
 /* Circle for rotating around the image */
@@ -382,7 +404,7 @@ nav {
   width: 350px; /* Larger than the image to ensure it rotates around it */
   height: 558px;
   border-radius: 50%;
-  background-image: url('circle1.png');
+  background-image: var(--profile_circle1);
   background-size: cover; /* Ensure the circle background fits inside */
   background-position: center;
   z-index: 0; /* Behind the image */
@@ -405,7 +427,7 @@ nav {
   width: 412px; /* Larger than the image to ensure it rotates around it */
   height: 558px;
   border-radius: 50%;
-  background-image: url('circle2.png');
+  background-image: var(--profile_circle2);
   background-size: cover; /* Ensure the circle background fits inside */
   background-position: center;
   z-index: 0; /* Behind the image */
@@ -429,7 +451,7 @@ nav {
   width: 550px; /* Larger than the image to ensure it rotates around it */
   height: 550px;
   border-radius: 50%;
-  background-image: url('circle3.png');
+  background-image: var(--profile_circle3);
   background-size: cover; /* Ensure the circle background fits inside */
   background-position: center;
   z-index: 0; /* Behind the image */
@@ -495,7 +517,7 @@ nav {
 h3 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-color-second);
+  color: black;
   margin-bottom: 15px;
 }
 /* ----- ABOUT INFO ----- */
@@ -535,6 +557,9 @@ h3 {
 .skills-header {
   margin-bottom: 10px;
 }
+.skills {
+  color: var(--text-color-second);
+}
 .skills-list {
   /* background-color: #efefef; */
   /* border-radius: 20px; */
@@ -550,6 +575,12 @@ h3 {
   padding: 5px;
   text-align: center;
 }
+
+.skills-list :hover {
+  color: var(--icon-hover);
+
+}
+
 
 .skill-box > i {
   font-size: 50px;
@@ -758,6 +789,7 @@ footer {
 .footer-social-icons {
   display: flex;
   gap: 30px;
+  color: black;
 }
 .bottom-footer {
   font-size: 14px;
