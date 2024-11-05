@@ -32,24 +32,43 @@ const themeToggleCheckbox = document.getElementById('theme-toggle');
 // Set default to dark mode
 const currentTheme = localStorage.getItem('theme') || 'dark';
 if (currentTheme === 'light') {
-  document.body.classList.add('light-mode');
-  themeToggleCheckbox.checked = true; // Set the switch to checked
+    document.body.classList.add('light-mode');
+    themeToggleCheckbox.checked = true; // Set the switch to checked
 } else {
-  // Ensure the body is in dark mode
-  document.body.classList.remove('light-mode');
-  themeToggleCheckbox.checked = false; // Set the switch to unchecked
+    document.body.classList.remove('light-mode');
+    themeToggleCheckbox.checked = false; // Set the switch to unchecked
+}
+
+// Function to update image sources based on the theme
+function updateImages(theme) {
+    const circles = [
+        { id: 'circle1', dark: 'images/circle1.png', light: 'images/lightcircle1.png' },
+        { id: 'circle2', dark: 'images/circle2.png', light: 'images/lightcircle2.png' },
+        { id: 'circle3', dark: 'images/circle3.png', light: 'images/lightcircle3.png' },
+        { id: 'charan', dark: 'images/charan.png', light: 'images/charan2.png' }
+    ];
+
+    // Update image sources based on current theme
+    circles.forEach(circle => {
+        const img = document.getElementById(circle.id);
+        img.src = theme === 'light' ? circle.light : circle.dark;
+        if (circle.id === 'charan') {
+            img.style.backgroundImage = theme === 'light' ? "url('images/charan2.png')" : "url('images/charan.png')";
+        }
+    });
 }
 
 // Add event listener to the toggle switch
 themeToggleCheckbox.addEventListener('change', function () {
-  document.body.classList.toggle('light-mode', this.checked);
-
-  if (this.checked) {
-    localStorage.setItem('theme', 'light');
-  } else {
-    localStorage.setItem('theme', 'dark');
-  }
+    const newTheme = this.checked ? 'light' : 'dark';
+    document.body.classList.toggle('light-mode', this.checked);
+    localStorage.setItem('theme', newTheme);
+    updateImages(newTheme); // Update images when the theme changes
 });
+
+// Initial update of images based on the current theme
+updateImages(currentTheme);
+
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
 const srBounce = ScrollReveal({
   origin: 'top',

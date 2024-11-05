@@ -4,6 +4,9 @@
 body {
   font-family: 'Ubuntu', sans-serif;
 }
+html, body{
+  overflow-x: hidden;
+}
 
 /* Applying the custom font to the body */
 body {
@@ -21,11 +24,12 @@ body {
   --second-color: rgb(248, 238, 0);
   --third-color: rgb(248, 238, 0);
   --first-shadow-color: rgba(0, 0, 0, 0.1);
-  --icon_circle: url('clickme_yellow.png');
-  --profile-image:url('charan.png');
-  --profile_circle1: url('circle1.png');
-  --profile_circle2: url('circle2.png');
-  --profile_circle3: url('circle3.png');
+  --nav-color:rgba(0, 0, 0, 0.9);
+  --icon_circle: url('images/clickme_yellow.png');
+  --profile-image:url('images/charan.png');
+  --profile_circle1: url('images/circle1.png');
+  --profile_circle2: url('images/circle2.png');
+  --profile_circle3: url('images/circle3.png');
 }
 
 /* Apply the dark mode colors to the body */
@@ -94,12 +98,13 @@ body.light-mode {
   --second-color: rgb(239, 183, 1);
   --third-color: #007bff;
   --first-shadow-color: rgba(0, 0, 0, 0.15);
+  --nav-color:rgba(255, 255, 255, 0.7);
   --text-shadow: 0 0 70px #e60073;
-  --icon_circle: url('clickme_blue.png');
-  --profile-image:url('charan2.png');
-  --profile_circle1: url('lightcircle1.png');
-  --profile_circle2: url('lightcircle2.png');
-  --profile_circle3: url('lightcircle3.png');
+  --icon_circle: url('images/clickme_blue.png');
+  --profile-image:url('images/charan2.png');
+  --profile_circle1: url('images/lightcircle1.png');
+  --profile_circle2: url('images/lightcircle2.png');
+  --profile_circle3: url('images/lightcircle3.png');
 }
 
 body.light-mode {
@@ -267,6 +272,7 @@ nav {
   display: flex;
   height: 100vh;
   min-height: 700px;
+  padding-block: 5em;
   margin: auto;
 }
 /* ----- FEATURED TEXT BOX ----- */
@@ -365,108 +371,56 @@ nav {
 
 /* ----- FEATURED IMAGE BOX ----- */ 
 /* Styling for the container */
-.featured-image {
-  display: flex;
-  justify-content: right;
-  align-content: center;
-  min-height: 80vh;
-  width: 50%;
-}
-
 .image-container {
-  position: relative; /* Ensure elements inside are positioned relative to this */
+  position: relative;
   margin: auto 0;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%; /* Keep the image round */
-  overflow: visible; /* Allow the circle to rotate outside the container */
-  z-index: 1;
-}
-
-/* Styling for the avatar image */
-.charan {
-  position: absolute;
-  top: -1px; /* Adjust this to control the distance of the circle from the image */
-  left: -1px;
-  width: 182px; /* Larger than the image to ensure it rotates around it */
-  height: 182px;
+  width: 100%;
+  height: auto;
+  top:100px;
   border-radius: 50%;
-  background-image: var(--profile-image);
-  background-size: cover; /* Ensure the circle background fits inside */
-  background-position: center;
+  overflow: visible;
 }
 
-/* Circle for rotating around the image */
-.circle1 {
+/* Avatar image */
+
+
+/* Circle images */
+.charan, .circle1-img, .circle2-img, .circle3-img {
   position: absolute;
-  top: -189px; /* Adjust this to control the distance of the circle from the image */
-  left: -85px;
-  width: 350px; /* Larger than the image to ensure it rotates around it */
-  height: 558px;
   border-radius: 50%;
-  background-image: var(--profile_circle1);
-  background-size: cover; /* Ensure the circle background fits inside */
-  background-position: center;
-  z-index: 0; /* Behind the image */
-  animation: rotate1 5s infinite linear; /* Rotate continuously */
+  top: 50px;
+  width: 500px; /* Adjust as needed */
+  height: 500px; /* Adjust as needed */
+  opacity: 0.8; /* Adjust transparency if needed */
+  z-index: 1; /* Behind the avatar */
 }
 
-/* Rotation animation */
+.circle1-img{
+  animation: rotate1 4s infinite linear; /* Rotate animation */
+}
+.circle2-img {
+  animation: rotate 6s infinite linear; /* Rotate animation */
+}
+.circle3-img {
+  animation: rotate2 8s infinite linear; /* Rotate animation */
+}
+
+/* Define animations for circles */
 @keyframes rotate1 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.circle2 {
-  position: absolute;
-  top: -189px; /* Adjust this to control the distance of the circle from the image */
-  left: -116px;
-  width: 412px; /* Larger than the image to ensure it rotates around it */
-  height: 558px;
-  border-radius: 50%;
-  background-image: var(--profile_circle2);
-  background-size: cover; /* Ensure the circle background fits inside */
-  background-position: center;
-  z-index: 0; /* Behind the image */
-  animation: rotate 5s infinite linear; /* Rotate continuously */
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* Rotation animation */
 @keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
-.circle3 {
-  position: absolute;
-  top: -186px; /* Adjust this to control the distance of the circle from the image */
-  left: -186px;
-  width: 550px; /* Larger than the image to ensure it rotates around it */
-  height: 550px;
-  border-radius: 50%;
-  background-image: var(--profile_circle3);
-  background-size: cover; /* Ensure the circle background fits inside */
-  background-position: center;
-  z-index: 0; /* Behind the image */
-  animation: rotate2 5s infinite linear; /* Rotate continuously */
-}
-
-/* Rotation animation */
 @keyframes rotate2 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
+
 .scroll-btn {
   position: absolute;
   bottom: 0;
@@ -800,16 +754,7 @@ footer {
 /* Center the .contact-info element */
 
 /* Responsive design */
-@media (max-width: 768px) {
-  .row {
-    height: auto; /* Adjust height for smaller screens */
-    padding: 20px; /* Add some padding */
-  }
 
-  .contact-info {
-    text-align: center; /* Center text for smaller screens */
-  }
-}
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px) {
@@ -824,9 +769,7 @@ footer {
 }
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
 @media only screen and (max-width: 900px) {
-  .nav-button {
-    display: none;
-  }
+  
   .nav-menu.responsive {
     left: 0;
   }
@@ -837,7 +780,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--nav-color);
     backdrop-filter: blur(20px);
     width: 100%;
     min-height: 450px;
@@ -870,7 +813,7 @@ footer {
   .featured-image {
     order: 1;
     justify-content: center;
-    min-height: 150px;
+    min-height: 550px;
     width: 100%;
     margin-top: 65px;
   }
@@ -897,26 +840,70 @@ footer {
   .project-container,
   .certificate-container {
     justify-content: center;
+    gap:80px;
   }
   .project-box,
-  .certificate-box {
-    width: 80%;
+  .certificate-box,
+  .contact-info {
+    width: 400px;
+    height: 400px;
+    
+  }
+  .charan, .circle1-img, .circle2-img, .circle3-img {
+    
+    width: 100%;
+    height: auto;
+    
   }
 }
-/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
-@media only screen and (max-width: 540px) {
+/* ----- MEDIA QUERY == 340px to 700 / RESPONSIVE ----- */
+@media only screen and (min-width: 340px) and (max-width: 700px) {
+  .wrapper {
+    padding-inline: 5vw;
+  }
+  .nav-name{
+    font-size: medium;
+  }
   .featured-name {
     font-size: 40px;
   }
-  .project-box {
-    width: 100%;
-  }
+  
   .form-inputs {
     flex-direction: column;
   }
   .input-field {
     width: 100%;
   }
+  .featured-box{
+    flex-direction: column;
+  }
+  .featured-image {
+    order: 1;
+    justify-content: center;
+    min-height: 420px;
+    width: 100%;
+    margin-top: 0;
+    /* margin-left: -120px; */
+  }
+  
+  .charan, .circle1-img, .circle2-img, .circle3-img {
+    
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  .project-box, .certificate-box, .contact-info{
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+  .middle-footer{
+    display: none;
+  }
+  
 }
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
