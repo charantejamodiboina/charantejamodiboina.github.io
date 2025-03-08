@@ -390,8 +390,7 @@ nav {
   border-radius: 50%;
   top: 50px;
   width: 500px; /* Adjust as needed */
-  height: 500px; /* Adjust as needed */
-  opacity: 0.8; /* Adjust transparency if needed */
+  height: 500px;
   z-index: 1; /* Behind the avatar */
 }
 
@@ -571,7 +570,7 @@ h3 {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  gap: 20px;
+  gap: 100px;
   flex-wrap: wrap;
 }
 
@@ -768,8 +767,10 @@ footer {
   }
 }
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
-@media only screen and (max-width: 900px) {
-  
+@media only screen and (max-width: 1024px) {
+  .wrapper{
+    align-items: center;
+  }
   .nav-menu.responsive {
     left: 0;
   }
@@ -824,6 +825,7 @@ footer {
   }
   .row {
     display: flex;
+    margin: auto;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
