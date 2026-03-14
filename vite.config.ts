@@ -4,7 +4,7 @@ import tailwind from "@tailwindcss/vite"
 import path from "path"
 
 export default defineConfig({
-  base: "",   // IMPORTANT: repo name
+  base: "/",   // IMPORTANT for username.github.io repo
 
   plugins: [
     react(),
