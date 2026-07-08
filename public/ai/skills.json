@@ -1,0 +1,70 @@
+{
+  "frontend": [
+    {
+      "name": "React.js",
+      "experience": "2+ years",
+      "level": "Advanced"
+    },
+    {
+      "name": "Next.js",
+      "experience": "1+ year",
+      "level": "Intermediate"
+    },
+    {
+      "name": "TypeScript",
+      "experience": "1 year",
+      "level": "Advanced"
+    },
+    {
+      "name": "JavaScript",
+      "experience": "2+ years",
+      "level": "Advanced"
+    }
+  ],
+  "backend": [
+    {
+      "name": "Node.js",
+      "experience": "2+ years",
+      "level": "Advanced"
+    },
+    {
+      "name": "Python",
+      "experience": "1+ year",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Django",
+      "experience": "1+ year",
+      "level": "Intermediate"
+    }
+  ],
+  "database": [
+    {
+      "name": "MongoDB",
+      "experience": "2+ years",
+      "level": "Advanced"
+    },
+    {
+      "name": "MySQL",
+      "experience": "2+ years",
+      "level": "Advanced"
+    },
+    {
+      "name": "PostgreSQL",
+      "experience": "6 months",
+      "level": "Beginner"
+    }
+  ],
+  "cloud": [
+    {
+      "name": "AWS",
+      "experience": "1+ year",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Cloudflare Workers",
+      "experience": "6 months",
+      "level": "Intermediate"
+    }
+  ]
+}

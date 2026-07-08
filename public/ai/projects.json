@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Portfolio Website",
+    "type": "Personal",
+    "description": "Portfolio built with React and TypeScript.",
+    "responsibilities": [
+      "UI Design",
+      "Responsive Design",
+      "AI Chatbot"
+    ]
+  },
+  {
+    "name": "Flash Quiz",
+    "type": "Personal",
+    "description": "Real-time multiplayer quiz application.",
+    "responsibilities": [
+      "React",
+      "FastAPI",
+      "WebSockets"
+    ]
+  },
+  {
+    "name": "Warehouse Management System",
+    "type": "Company",
+    "confidential": true,
+    "responsibilities": [
+      "React Development",
+      "Redux",
+      "REST APIs",
+      "Responsive UI"
+    ]
+  }
+]

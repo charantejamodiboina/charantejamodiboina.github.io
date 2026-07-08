@@ -1,0 +1,73 @@
+{
+    "sections": [
+        {
+            "file": "assistant.json",
+            "topics": [
+                "ai name",
+                "pika",
+                "creator"
+            ]
+        },
+        {
+            "file": "about.json",
+            "topics": [
+                "about",
+                "introduction",
+                "yourself",
+                "who are you",
+                "name"
+            ]
+        },
+        {
+            "file": "skills.json",
+            "topics": [
+                "skills",
+                "technology",
+                "tech stack",
+                "frontend",
+                "backend",
+                "python",
+                "django",
+                "react",
+                "next",
+                "node",
+                "typescript",
+                "javascript",
+                "aws",
+                "mongodb"
+            ]
+        },
+        {
+            "file": "projects.json",
+            "topics": [
+                "project",
+                "portfolio",
+                "flash quiz",
+                "warehouse",
+                "audit"
+            ]
+        },
+        {
+            "file": "experience.json",
+            "topics": [
+                "experience",
+                "work",
+                "career"
+            ]
+        },
+        {
+            "file": "contact.json",
+            "topics": [
+                "contact",
+                "email"
+            ]
+        },
+        {
+            "file": "links.json",
+            "topics": [
+                "linkedin",
+                "github"
+            ]
+        }
+    ]
+}

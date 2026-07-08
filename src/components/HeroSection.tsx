@@ -30,7 +30,7 @@ const HeroSection = () => {
                 <a href="#about">About Me</a>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
-                <a href="/CHARANTEJAMODIBOINA.pdf" download className="flex items-center gap-2">
+                <a href="https://docs.google.com/document/d/1fXzlRzt0kDFFuE-JG43CqJMIQqJWvM0__lp5kWmGaIc/export?format=pdf">
                   <Download className="w-5 h-5" />
                   Download CV
                 </a>
